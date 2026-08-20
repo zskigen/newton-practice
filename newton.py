@@ -7,6 +7,11 @@ def deriv2(f, x, eps = 1e-5):
 
 
 def optimize(x0, f, tol =1e-4):
+    '''
+    x0: the value of the starting x value
+    f: function to optimize
+    tol: OPTIONAL. the espsilon in the derivative function
+    '''
     x_new = x0 - deriv(f, x0)/ deriv2(f, x0)
     x = x0
     while abs(x_new - x) > tol:
